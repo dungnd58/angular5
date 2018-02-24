@@ -34,8 +34,8 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 /* MONGODB */
-// var mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
-// mongoose.connect('mongodb://localhost/angular5', { useMongoClient: true, promiseLibrary: require('bluebird') })
-// .then(() =>  console.log('connection succesful'))
-// .catch((err) => console.error(err));
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb://localhost/angular5', { useMongoClient: true, promiseLibrary: require('bluebird') })
+.then(() =>  console.log('--- mongodb://localhost/angular5: connection succesful ---'))
+.catch((err) => console.error(err));
