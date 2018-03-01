@@ -10,7 +10,7 @@ export class AppServices {
 
     constructor(private http: HttpClient) {}
 
-    mockdata: {} = {
+    mockdata = {
         "colourGroups": [
             {
                 "title": "white",
@@ -87,7 +87,7 @@ export class AppServices {
                 "id": 9,
                 "title": "Tan Orange",
                 "value": "Tan Orange",
-                "colourGroupId": 2
+                "colourGroupId": 3
             }
         ],
         "products": [
@@ -96,63 +96,81 @@ export class AppServices {
                 "colourGroupId": 1,
                 "id": 1,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Arctic White",
+                "code": "WHITE-JH001WHITE"
             },
             {
                 "colorId": 2,
                 "colourGroupId": 5,
                 "id": 2,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Alien Green",
+                "code": "GREEN-JH001GREEN"
             },
             {
                 "colorId": 3,
                 "colourGroupId": 5,
                 "id": 3,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "new color"
+                "status": "new color",
+                "name": "Apple Green",
+                "code": "GREEN-JH001GREEN"
             },
             {
                 "colorId": 4,
                 "colourGroupId": 3,
                 "id": 4,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Burnt Orange",
+                "code": "ORANGE-JH001ORANGE"
             },
             {
                 "colorId": 5,
                 "colourGroupId": 5,
                 "id": 5,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Bottle Green",
+                "code": "GREEN-JH001GREEN"
             },
             {
                 "colorId": 6,
                 "colourGroupId": 2,
                 "id": 6,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "raladeal"
+                "status": "raladeal",
+                "name": "Brick Red",
+                "code": "RED-JH001RED"
             },
             {
                 "colorId": 7,
                 "colourGroupId": 2,
                 "id": 7,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Lipstick Red",
+                "code": "RED-JH001RED"
             },
             {
                 "colorId": 8,
                 "colourGroupId": 1,
                 "id": 8,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "new size"
+                "status": "new size",
+                "name": "Milk White",
+                "code": "WHITE-JH001WHITE"
             },
             {
                 "colorId": 9,
-                "colourGroupId": 2,
+                "colourGroupId": 3,
                 "id": 9,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": ""
+                "status": "",
+                "name": "Tan Orange",
+                "code": "ORANGE-JH001ORANGE"
             }
         ]
     }

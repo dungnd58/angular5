@@ -1,4 +1,4 @@
-<div class="section-product-select collapse" id="productSelect-sm-up" style="">
+<div class="section-product-select collapse" id="productSelect-sm-up">
   <div class="border border-light p-md-1 mb-1">
       <div class="row justify-content-between">
           <div class="d-none d-lg-block col-md-3 col-lg-2">
@@ -11,7 +11,7 @@
                       <i class="fa fa-download "></i>
                       <span class="sr-only">Download image</span>
                   </a>
-                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+                  <img data-src="{{product.imageUrl}}" alt="" class="lazy img-fluid loaded" src="{{product.imageUrl}}" data-was-processed="true">
               </div>
               <div class="d-none d-sm-block">
                   <p class="h6 mb-1"><a href="#" title="Download Marketing Assets" class="text-dark"><i class="fa fa-fw fa-cloud-download"></i> Download marketing Assets</a>
@@ -22,7 +22,7 @@
           </div>
           <div class="col-12 col-lg-10">
 
-              <h3 class="h4 mb-1">JADE - JH001JADE</h3>
+              <h3 class="h4 mb-1">{{product.code}}</h3>
 
               <table class="variant-options-table w-100">
                   <thead class="">
