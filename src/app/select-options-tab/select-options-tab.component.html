@@ -1,0 +1,137 @@
+<div class="tab-pane mt-1 active hidden-xs" id="tab-options" role="tabpanel" aria-expanded="true">
+  <!-- Filter by colour group -->
+  <div class="section-product-filters justify-content-between row mb-md-2">
+          <div class="col-12 col-sm-6 col-md-3 order-sm-2">
+              <div class="form-group">
+                  <label for="quickSelect" class="h5">Select Colour</label>
+                  <div class="select-dropdown">
+                      <select class="form-control" id="variantDropdown" data-target="sm-up">
+                          <option disabled="disabled" selected="">-- Please Select --</option>
+                        <option *ngFor="let color of data.colors" value="color.title">{{color.title}}</option>
+                      </select>
+                  </div>
+
+              </div>
+              <a class="btn btn-sm btn-outline-dark  d-md-none" href="#" data-toggle="prices">Show All Colours</a>
+          </div>
+          <div class="col-12 col-sm-8 order-sm-1 d-none d-md-block">
+              <h4 class="mb-1 h5">Filter by Colour Group</h4>
+              <div class="filters-reset float-right ml-2">
+                  <a href="#" class="btn btn-filter filter-reset" ng-filter="">Reset</a>
+              </div>
+              <div class="filters">
+                  <a href="#" *ngFor="let group of data.colourGroups" class="btn btn-filter filter-{{group.title}}">{{group.title}}s</a>
+              </div>
+          </div>
+      </div>
+
+  <!-- Filter result -->
+  <div class="section-product-variants d-flex">
+      <article class="variantMini">
+          <div class="variant-img">
+              <a href="" class="btn btn-action btn-right" data-toggle="modal" data-target="#zoomModalsm-up">
+                  <i class="fa fa-search-plus"></i>
+                  <span class="sr-only">Zoom image</span>
+              </a>
+              <a href="" class="btn btn-action btn-left">
+                  <i class="fa fa-download"></i>
+                  <span class="sr-only">Download image</span>
+              </a>
+              <a class="variantSelect" data-target="#productSelect-sm-up" data-toggle="collapse">
+                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+              </a>
+          </div>
+          <a href="#" role="button" class="variantSelect text-dark" data-target="sm-up">Airforce Blue</a>
+      </article>
+      <article class="variantMini">
+          <div class="variant-img">
+              <a href="" class="btn btn-action btn-right" data-toggle="modal" data-target="#zoomModalsm-up">
+                  <i class="fa fa-search-plus"></i>
+                  <span class="sr-only">Zoom image</span>
+              </a>
+              <a href="" class="btn btn-action btn-left">
+                  <i class="fa fa-download"></i>
+                  <span class="sr-only">Download image</span>
+              </a>
+              <a class="variantSelect" data-target="#productSelect-sm-up" data-toggle="collapse">
+                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+                  <span class="variant-overlay bg-nc">new colour</span>
+              </a>
+          </div>
+          <a href="#" role="button" class="variantSelect text-dark" data-target="sm-up">Apple Green</a>
+      </article>
+      <article class="variantMini">
+          <div class="variant-img">
+              <a href="" class="btn btn-action btn-right" data-toggle="modal" data-target="#zoomModalsm-up">
+                  <i class="fa fa-search-plus"></i>
+                  <span class="sr-only">Zoom image</span>
+              </a>
+              <a href="" class="btn btn-action btn-left">
+                  <i class="fa fa-download"></i>
+                  <span class="sr-only">Download image</span>
+              </a>
+              <a class="variantSelect" data-target="#productSelect-sm-up" data-toggle="collapse">
+                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+                  <span class="variant-overlay bg-danger">raladeal</span>
+              </a>
+          </div>
+          <a href="#" role="button" class="variantSelect text-dark" data-target="sm-up">Baby Pink</a>
+      </article>
+      <article class="variantMini">
+          <div class="variant-img">
+              <a href="" class="btn btn-action btn-right" data-toggle="modal" data-target="#zoomModalsm-up">
+                  <i class="fa fa-search-plus"></i>
+                  <span class="sr-only">Zoom image</span>
+              </a>
+              <a href="" class="btn btn-action btn-left">
+                  <i class="fa fa-download"></i>
+                  <span class="sr-only">Download image</span>
+              </a>
+              <a class="variantSelect" data-target="#productSelect-sm-up" data-toggle="collapse">
+                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+                  <span class="variant-overlay bg-ns">new size</span>
+              </a>
+          </div>
+          <a href="#" role="button" class="variantSelect text-dark" data-target="sm-up">Brick Red</a>
+      </article>
+      <article class="variantMini">
+          <div class="variant-img">
+              <a href="" class="btn btn-action btn-right" data-toggle="modal" data-target="#zoomModalsm-up">
+                  <i class="fa fa-search-plus"></i>
+                  <span class="sr-only">Zoom image</span>
+              </a>
+              <a href="" class="btn btn-action btn-left">
+                  <i class="fa fa-download"></i>
+                  <span class="sr-only">Download image</span>
+              </a>
+              <a class="variantSelect" data-target="#productSelect-sm-up" data-toggle="collapse">
+                  <img data-src="../../assets/img/sample.jpg" alt="" class="lazy img-fluid loaded" src="../../assets/img/sample.jpg" data-was-processed="true">
+                  <span class="variant-overlay bg-primary">exclusive</span>
+              </a>
+          </div>
+          <a href="#" role="button" class="variantSelect text-dark" data-target="sm-up">Charcoal</a>
+      </article>
+  </div>
+
+  <app-product-select-collapse></app-product-select-collapse>
+
+  <!-- MODAL -->
+    <div class="modal fade bd-example-modal-lg" id="zoomModalsm-up" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Variant Colour</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="img-fluid" src="/Static/img/catalogue/product-detail/product-img-main5.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
