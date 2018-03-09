@@ -96,7 +96,7 @@ export class AppServices {
                 "colourGroupId": 1,
                 "id": 1,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "",
+                "isExclusive": true,
                 "name": "Arctic White",
                 "code": "WHITE-JH001WHITE"
             },
@@ -114,7 +114,7 @@ export class AppServices {
                 "colourGroupId": 5,
                 "id": 3,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "new color",
+                "isNewColor": true,
                 "name": "Apple Green",
                 "code": "GREEN-JH001GREEN"
             },
@@ -159,7 +159,7 @@ export class AppServices {
                 "colourGroupId": 1,
                 "id": 8,
                 "imageUrl": "../assets/img/sample.jpg",
-                "status": "new size",
+                "isNewSize": true,
                 "name": "Milk White",
                 "code": "WHITE-JH001WHITE"
             },
