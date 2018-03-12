@@ -1,1 +1,96 @@
-<div>Books list</div>
+<div class="container">
+    <h1>Book List</h1>
+    <button type="button" data-toggle="modal" data-target="#creatingBook" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <button type="button" class="btn btn-info" (click)="showDetails(book._id)">Show Details</button>
+            <button type="button" class="btn btn-danger" (click)="deleteBook(book._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a [routerLink]="['/categories']" class="btn btn-info">Back to home</a>
+  </div>
+
+  <!-- MODAL show details -->
+  <div *ngIf="selectedBook" class="modal fade" id="showDetailsBook" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book: {{selectedBook.title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <dl class="list">
+                        <dt>ISBN</dt>
+                        <dd>{{ selectedBook.isbn }}</dd>
+                        <dt>Author</dt>
+                        <dd>{{ selectedBook.author }}</dd>
+                        <dt>Publisher</dt>
+                        <dd>{{ selectedBook.publisher }}</dd>
+                        <dt>Price</dt>
+                        <dd>{{ selectedBook.price }}</dd>
+                        <dt>Update Date</dt>
+                        <dd>{{ selectedBook.updated_at }}</dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- MODAL create book -->
+  <div class="modal fade" id="creatingBook" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create a new book</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form #bookForm="ngForm">
+                    <div class="form-group">
+                        <label for="name">ISBN</label>
+                        <input type="text" class="form-control" [(ngModel)]="book.isbn" name="isbn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Title</label>
+                        <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Author</label>
+                        <input type="text" class="form-control" [(ngModel)]="book.author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Published Year</label>
+                        <input type="number" class="form-control" [(ngModel)]="book.published_year" name="published_year" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Publisher</label>
+                        <input type="text" class="form-control" [(ngModel)]="book.publisher" name="publisher" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" (click)="createBook()" [disabled]="!bookForm.form.valid">Create</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

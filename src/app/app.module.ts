@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Http } from '@angular/http';
-import { AppServices } from './app.services';
+import { AppServices } from './app.service';
 
 import { BookModule } from '../book/book.module';
+import { CategoryModule } from '../category/category.module';
 
 import { AppComponent } from './app.component';
 
@@ -14,7 +15,9 @@ const appRoutes: Routes = [
   {
     path: '',
     children: [{
-      path: 'books', loadChildren: '../book/book.module#BookModule'
+      path: 'categories/:id', loadChildren: '../book/book.module#BookModule'
+    }, {
+      path: 'categories', loadChildren: '../category/category.module#CategoryModule'
     }]
   }
 ]

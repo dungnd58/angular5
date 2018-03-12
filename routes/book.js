@@ -3,17 +3,47 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var Book = require('../models/Book.js');
+var Category = require('../models/Category.js');
 
-/* GET ALL BOOKS */
-router.get('/', function(req, res, next) {
-  Book.find(function (err, products) {
+/* GET ALL CATEGORIES */
+router.get('/category', function(req, res, next) {
+  Category.find(function (err, products) {
+    if (err) return next(err);
+    res.json(products);
+  });
+});
+
+/* CREATE CATEGORY */
+router.post('/category', function(req, res, next) {
+  Category.create(req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
+/* DELETE CATEGORY */
+router.delete('/category/:id', function(req, res, next) {
+  Category.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+    if (err) return next(err);
+    else {
+      Book.remove({categoryId: req.params.id}, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+      });
+    }
+  });
+});
+
+/* GET ALL BOOKS IN A CATEGORY*/
+router.get('/category/:id', function(req, res, next) {
+  Book.find({categoryId: req.params.id}, function (err, products) {
     if (err) return next(err);
     res.json(products);
   });
 });
 
 /* GET SINGLE BOOK BY ID */
-router.get('/:id', function(req, res, next) {
+router.get('/book/:id', function(req, res, next) {
   Book.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -21,7 +51,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 /* SAVE BOOK */
-router.post('/', function(req, res, next) {
+router.post('/book', function(req, res, next) {
   Book.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -29,7 +59,7 @@ router.post('/', function(req, res, next) {
 });
 
 /* UPDATE BOOK */
-router.put('/:id', function(req, res, next) {
+router.put('/book/:id', function(req, res, next) {
   Book.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -37,7 +67,7 @@ router.put('/:id', function(req, res, next) {
 });
 
 /* DELETE BOOK */
-router.delete('/:id', function(req, res, next) {
+router.delete('/book/:id', function(req, res, next) {
   Book.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
