@@ -19,7 +19,9 @@ export const ROUTES: Routes = [
         FormsModule,
         RouterModule.forChild(ROUTES)
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule
+    ],
     declarations: [
         CategoryComponent
     ]
